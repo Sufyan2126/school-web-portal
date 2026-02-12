@@ -15,30 +15,37 @@ import {
   Heart,
   Calendar
 } from "lucide-react";
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from "@/components/ui/carousel";
 
 const recentEvents = [
-  "https://images.unsplash.com/photo-1567168544813-cc03465b4fa8?w=400&h=300&fit=crop",
-  "https://images.unsplash.com/photo-1492684223066-81342ee5ff30?w=400&h=300&fit=crop",
-  "https://images.unsplash.com/photo-1577896851231-70ef18881754?w=400&h=300&fit=crop",
-  "https://images.unsplash.com/photo-1532375810709-75b1da00537c?w=400&h=300&fit=crop",
-  "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=400&h=300&fit=crop",
-  "https://images.unsplash.com/photo-1523050854058-8df90110c9f1?w=400&h=300&fit=crop",
+  { src: "https://images.unsplash.com/photo-1567168544813-cc03465b4fa8?w=400&h=300&fit=crop", desc: "Annual Science Fair 2024" },
+  { src: "https://images.unsplash.com/photo-1492684223066-81342ee5ff30?w=400&h=300&fit=crop", desc: "Cultural Day Celebrations" },
+  { src: "https://images.unsplash.com/photo-1577896851231-70ef18881754?w=400&h=300&fit=crop", desc: "Inter-School Debate Competition" },
+  { src: "https://images.unsplash.com/photo-1532375810709-75b1da00537c?w=400&h=300&fit=crop", desc: "Community Service Drive" },
+  { src: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=400&h=300&fit=crop", desc: "Mathematics Olympiad Winners" },
+  { src: "https://images.unsplash.com/photo-1523050854058-8df90110c9f1?w=400&h=300&fit=crop", desc: "Graduation Ceremony Highlights" },
 ];
 
 const sportsEvents = [
-  "https://images.unsplash.com/photo-1574629810360-7efbbe195018?w=400&h=300&fit=crop",
-  "https://images.unsplash.com/photo-1531415074968-036ba1b575da?w=400&h=300&fit=crop",
-  "https://images.unsplash.com/photo-1461896836934-28e4c76c1e06?w=400&h=300&fit=crop",
-  "https://images.unsplash.com/photo-1587280501635-68a0e82cd5ff?w=400&h=300&fit=crop",
-  "https://images.unsplash.com/photo-1546519638-68e109498ffc?w=400&h=300&fit=crop",
+  { src: "https://images.unsplash.com/photo-1574629810360-7efbbe195018?w=400&h=300&fit=crop", desc: "Annual Sports Meet Finals" },
+  { src: "https://images.unsplash.com/photo-1531415074968-036ba1b575da?w=400&h=300&fit=crop", desc: "Basketball Championship" },
+  { src: "https://images.unsplash.com/photo-1461896836934-28e4c76c1e06?w=400&h=300&fit=crop", desc: "Football League Match" },
+  { src: "https://images.unsplash.com/photo-1587280501635-68a0e82cd5ff?w=400&h=300&fit=crop", desc: "Tennis Tournament" },
+  { src: "https://images.unsplash.com/photo-1546519638-68e109498ffc?w=400&h=300&fit=crop", desc: "Swimming Gala 2024" },
 ];
 
 const exhibitionEvents = [
-  "https://images.unsplash.com/photo-1594608661623-aa0bd3a69d98?w=400&h=300&fit=crop",
-  "https://images.unsplash.com/photo-1560523159-6b681a1e1852?w=400&h=300&fit=crop",
-  "https://images.unsplash.com/photo-1513475382585-d06e58bcb0e0?w=400&h=300&fit=crop",
-  "https://images.unsplash.com/photo-1561484930-998b6a7b22e8?w=400&h=300&fit=crop",
-  "https://images.unsplash.com/photo-1580927752452-89d86da3fa0a?w=400&h=300&fit=crop",
+  { src: "https://images.unsplash.com/photo-1594608661623-aa0bd3a69d98?w=400&h=300&fit=crop", desc: "Art & Craft Exhibition" },
+  { src: "https://images.unsplash.com/photo-1560523159-6b681a1e1852?w=400&h=300&fit=crop", desc: "Robotics Showcase" },
+  { src: "https://images.unsplash.com/photo-1513475382585-d06e58bcb0e0?w=400&h=300&fit=crop", desc: "Environmental Projects" },
+  { src: "https://images.unsplash.com/photo-1561484930-998b6a7b22e8?w=400&h=300&fit=crop", desc: "Literature & Poetry Corner" },
+  { src: "https://images.unsplash.com/photo-1580927752452-89d86da3fa0a?w=400&h=300&fit=crop", desc: "History & Heritage Display" },
 ];
 interface IndexProps {
   onApplyClick?: () => void;
@@ -54,7 +61,7 @@ const Index = ({ onApplyClick }: IndexProps) => {
         <div
           className="absolute inset-0 z-0 bg-cover bg-center bg-no-repeat"
           style={{
-            backgroundImage: "url('https://images.unsplash.com/photo-1541339907198-e08756dedf3f?q=80&w=2070&auto=format&fit=crop')",
+            backgroundImage: "url('https://images.unsplash.com/photo-1580582932707-520aed937b7b?q=80&w=2000&auto=format&fit=crop')",
           }}
         >
           <div className="absolute inset-0 bg-black/60 backdrop-blur-[2px]" />
@@ -62,7 +69,6 @@ const Index = ({ onApplyClick }: IndexProps) => {
 
         <div className="container mx-auto px-4 relative z-10">
           <div className="max-w-4xl">
-
             <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-6 leading-[1.1]">
               <span className="block animate-fade-in" style={{ animationDelay: "0.1s" }}>Building</span>
               <span className="block text-secondary animate-fade-in" style={{ animationDelay: "0.3s" }}>Tomorrow's</span>
@@ -76,16 +82,15 @@ const Index = ({ onApplyClick }: IndexProps) => {
             <div className="flex flex-wrap gap-4">
               <Button
                 size="lg"
-                className="bg-secondary hover:bg-secondary/90 text-secondary-foreground font-semibold px-8 rounded-full"
+                className="bg-secondary hover:bg-secondary/90 text-secondary-foreground font-semibold px-8 rounded-full transition-all duration-300 transform hover:scale-105"
                 onClick={onApplyClick}
               >
                 Start Application
-                <ArrowRight className="w-4 h-4" />
+                <ArrowRight className="w-4 h-4 ml-2" />
               </Button>
             </div>
           </div>
         </div>
-
       </section>
 
       {/* About Section */}
@@ -121,8 +126,8 @@ const Index = ({ onApplyClick }: IndexProps) => {
             <div className="relative">
               <div className="aspect-[4/3] rounded-2xl overflow-hidden shadow-2xl">
                 <img
-                  src="https://images.unsplash.com/photo-1523050854058-8df90110c9f1?w=600&h=450&fit=crop&q=80"
-                  alt="Students at Central Public High School"
+                  src="https://images.unsplash.com/photo-1546410531-bb4caa6b424d?q=80&w=2070&auto=format&fit=crop"
+                  alt="Little graduate with dreams"
                   className="w-full h-full object-cover"
                 />
               </div>
@@ -222,25 +227,34 @@ const Index = ({ onApplyClick }: IndexProps) => {
             title="Recent Events"
             subtitle="Glimpses from our latest activities and celebrations."
           />
-          <div className="grid grid-cols-3 md:grid-cols-4 gap-4">
-            {recentEvents.map((image, index) => (
-              <div
-                key={index}
-                className={`overflow-hidden rounded-xl group animate-fade-in ${index === 0 ? "col-span-2 row-span-2" :
-                  index === 3 ? "col-span-2" : ""
-                  }`}
-                style={{ animationDelay: `${index * 0.1}s` }}
-              >
-                <img
-                  src={image}
-                  alt={`Recent event ${index + 1}`}
-                  className={`w-full object-cover group-hover:scale-110 transition-transform duration-500 ${index === 0 ? "h-64 md:h-80" :
-                    index === 3 ? "h-32 md:h-40" : "h-32 md:h-40"
-                    }`}
-                />
-              </div>
-            ))}
-          </div>
+          <Carousel
+            opts={{
+              align: "start",
+              loop: true,
+            }}
+            className="w-full"
+          >
+            <CarouselContent className="-ml-4">
+              {recentEvents.map((event, index) => (
+                <CarouselItem key={index} className="pl-4 md:basis-1/2 lg:basis-1/4">
+                  <div className="group relative overflow-hidden">
+                    <div className="aspect-[4/3] overflow-hidden">
+                      <img
+                        src={event.src}
+                        alt={`Recent event ${index + 1}`}
+                        className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-110"
+                      />
+                    </div>
+                    <p className="mt-3 text-sm font-medium text-foreground truncate text-center">
+                      {event.desc}
+                    </p>
+                  </div>
+                </CarouselItem>
+              ))}
+            </CarouselContent>
+            <CarouselPrevious className="-left-4 h-10 w-10 md:h-12 md:w-12 bg-primary hover:bg-primary/90 text-white border-2 border-white/20 shadow-xl transition-all duration-300 hover:scale-110 z-10" />
+            <CarouselNext className="-right-4 h-10 w-10 md:h-12 md:w-12 bg-primary hover:bg-primary/90 text-white border-2 border-white/20 shadow-xl transition-all duration-300 hover:scale-110 z-10" />
+          </Carousel>
         </div>
       </section>
 
@@ -251,25 +265,34 @@ const Index = ({ onApplyClick }: IndexProps) => {
             title="Sports Events"
             subtitle="Highlights from our sports activities and competitions."
           />
-          <div className="grid grid-cols-3 md:grid-cols-4 gap-4">
-            {sportsEvents.map((image, index) => (
-              <div
-                key={index}
-                className={`overflow-hidden rounded-xl group animate-fade-in ${index === 1 ? "col-span-2 row-span-2" :
-                  index === 4 ? "col-span-2" : ""
-                  }`}
-                style={{ animationDelay: `${index * 0.1}s` }}
-              >
-                <img
-                  src={image}
-                  alt={`Sports event ${index + 1}`}
-                  className={`w-full object-cover group-hover:scale-110 transition-transform duration-500 ${index === 1 ? "h-64 md:h-80" :
-                    index === 4 ? "h-32 md:h-40" : "h-32 md:h-40"
-                    }`}
-                />
-              </div>
-            ))}
-          </div>
+          <Carousel
+            opts={{
+              align: "start",
+              loop: true,
+            }}
+            className="w-full"
+          >
+            <CarouselContent className="-ml-4">
+              {sportsEvents.map((event, index) => (
+                <CarouselItem key={index} className="pl-4 md:basis-1/2 lg:basis-1/4">
+                  <div className="group relative overflow-hidden">
+                    <div className="aspect-[4/3] overflow-hidden">
+                      <img
+                        src={event.src}
+                        alt={`Sports event ${index + 1}`}
+                        className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-110"
+                      />
+                    </div>
+                    <p className="mt-3 text-sm font-medium text-foreground truncate text-center">
+                      {event.desc}
+                    </p>
+                  </div>
+                </CarouselItem>
+              ))}
+            </CarouselContent>
+            <CarouselPrevious className="-left-4 h-10 w-10 md:h-12 md:w-12 bg-primary hover:bg-primary/90 text-white border-2 border-white/20 shadow-xl transition-all duration-300 hover:scale-110 z-10" />
+            <CarouselNext className="-right-4 h-10 w-10 md:h-12 md:w-12 bg-primary hover:bg-primary/90 text-white border-2 border-white/20 shadow-xl transition-all duration-300 hover:scale-110 z-10" />
+          </Carousel>
         </div>
       </section>
 
@@ -280,25 +303,34 @@ const Index = ({ onApplyClick }: IndexProps) => {
             title="Exhibition"
             subtitle="Showcasing creativity and innovation from our students."
           />
-          <div className="grid grid-cols-3 md:grid-cols-4 gap-4">
-            {exhibitionEvents.map((image, index) => (
-              <div
-                key={index}
-                className={`overflow-hidden rounded-xl group animate-fade-in ${index === 2 ? "col-span-2 row-span-2" :
-                  index === 0 ? "col-span-2" : ""
-                  }`}
-                style={{ animationDelay: `${index * 0.1}s` }}
-              >
-                <img
-                  src={image}
-                  alt={`Exhibition ${index + 1}`}
-                  className={`w-full object-cover group-hover:scale-110 transition-transform duration-500 ${index === 2 ? "h-64 md:h-80" :
-                    index === 0 ? "h-32 md:h-40" : "h-32 md:h-40"
-                    }`}
-                />
-              </div>
-            ))}
-          </div>
+          <Carousel
+            opts={{
+              align: "start",
+              loop: true,
+            }}
+            className="w-full"
+          >
+            <CarouselContent className="-ml-4">
+              {exhibitionEvents.map((event, index) => (
+                <CarouselItem key={index} className="pl-4 md:basis-1/2 lg:basis-1/4">
+                  <div className="group relative overflow-hidden">
+                    <div className="aspect-[4/3] overflow-hidden">
+                      <img
+                        src={event.src}
+                        alt={`Exhibition ${index + 1}`}
+                        className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-110"
+                      />
+                    </div>
+                    <p className="mt-3 text-sm font-medium text-foreground truncate text-center">
+                      {event.desc}
+                    </p>
+                  </div>
+                </CarouselItem>
+              ))}
+            </CarouselContent>
+            <CarouselPrevious className="-left-4 h-10 w-10 md:h-12 md:w-12 bg-primary hover:bg-primary/90 text-white border-2 border-white/20 shadow-xl transition-all duration-300 hover:scale-110 z-10" />
+            <CarouselNext className="-right-4 h-10 w-10 md:h-12 md:w-12 bg-primary hover:bg-primary/90 text-white border-2 border-white/20 shadow-xl transition-all duration-300 hover:scale-110 z-10" />
+          </Carousel>
         </div>
       </section>
 
