@@ -1,23 +1,13 @@
-import { useState } from "react";
-import { Navbar } from "./Navbar";
+import { Outlet } from "react-router-dom";
 import { Footer } from "./Footer";
-import { WhatsAppButton } from "./WhatsAppButton";
-import { ContactDialog } from "@/components/ContactDialog";
 
-interface LayoutProps {
-  children: React.ReactNode;
-}
-
-export const Layout = ({ children }: LayoutProps) => {
-  const [isContactOpen, setIsContactOpen] = useState(false);
-
+export const Layout = () => {
   return (
-    <div className="min-h-screen flex flex-col">
-      <Navbar onApplyClick={() => setIsContactOpen(true)} />
-      <main className="flex-1 pt-16 md:pt-20">{children}</main>
+    <div className="flex flex-col min-h-screen">
+      <main className="flex-1 pt-16 md:pt-20">
+        <Outlet />
+      </main>
       <Footer />
-      <WhatsAppButton />
-      <ContactDialog open={isContactOpen} onOpenChange={setIsContactOpen} />
     </div>
   );
 };

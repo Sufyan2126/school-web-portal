@@ -34,10 +34,18 @@ export const FAQChatbot = () => {
         { type: "bot", text: "Hello! I'm the School Assistant. How can I help you today?" }
     ]);
     const scrollRef = useRef<HTMLDivElement>(null);
+    const lastMessageRef = useRef<HTMLDivElement>(null);
 
     useEffect(() => {
-        if (scrollRef.current) {
-            scrollRef.current.scrollTop = scrollRef.current.scrollHeight;
+        if (messages.length > 1) {
+            const lastUserMessageIndex = messages.length - 2;
+            const element = scrollRef.current?.querySelector(`[data-index="${lastUserMessageIndex}"]`);
+            if (element) {
+                element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            } else if (scrollRef.current) {
+                // Fallback for initial load or other cases where specific element isn't found
+                scrollRef.current.scrollTop = scrollRef.current.scrollHeight;
+            }
         }
     }, [messages, isOpen]);
 
@@ -98,6 +106,7 @@ export const FAQChatbot = () => {
                                 {messages.map((msg, i) => (
                                     <div
                                         key={i}
+                                        data-index={i}
                                         className={cn(
                                             "max-w-[85%] p-3 rounded-lg text-xs md:text-sm animate-in fade-in slide-in-from-bottom-2",
                                             msg.type === "bot"

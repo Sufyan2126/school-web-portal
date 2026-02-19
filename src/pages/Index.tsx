@@ -23,6 +23,18 @@ import {
   CarouselPrevious,
 } from "@/components/ui/carousel";
 
+// Image Constants - Replace these URLs with your own images
+// Image Constants - Replace these URLs with your own images
+const HERO_IMAGE = "https://images.unsplash.com/photo-1571260899304-425eee4c7efc?q=80&w=2070&auto=format&fit=crop";
+const ABOUT_IMAGE = "https://images.unsplash.com/photo-1546410531-bb4caa6b424d?q=80&w=2070&auto=format&fit=crop";
+const CAMPUS_IMAGES = [
+  "https://images.unsplash.com/photo-1580582932707-520aed937b7b?w=300&h=200&fit=crop&q=80",
+  "https://images.unsplash.com/photo-1562774053-701939374585?w=300&h=200&fit=crop&q=80",
+  "https://images.unsplash.com/photo-1571902943202-507ec2618e8f?w=300&h=200&fit=crop&q=80",
+  "https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=300&h=200&fit=crop&q=80"
+];
+
+
 const recentEvents = [
   { src: "https://images.unsplash.com/photo-1567168544813-cc03465b4fa8?w=400&h=300&fit=crop", desc: "Annual Science Fair 2024" },
   { src: "https://images.unsplash.com/photo-1492684223066-81342ee5ff30?w=400&h=300&fit=crop", desc: "Cultural Day Celebrations" },
@@ -56,12 +68,12 @@ const Index = ({ onApplyClick }: IndexProps) => {
     <div className="overflow-hidden">
       {/* Hero Section - Minimal & Bold */}
       {/* Hero Section - Minimal & Bold with Background Image */}
-      <section className="min-h-[85vh] flex items-center relative overflow-hidden">
+      <section className="min-h-[80vh] md:min-h-[calc(100vh-5rem)] flex items-center relative overflow-hidden">
         {/* Background Image with Overlay */}
         <div
           className="absolute inset-0 z-0 bg-cover bg-center bg-no-repeat"
           style={{
-            backgroundImage: "url('https://images.unsplash.com/photo-1580582932707-520aed937b7b?q=80&w=2000&auto=format&fit=crop')",
+            backgroundImage: `url('${HERO_IMAGE}')`,
           }}
         >
           <div className="absolute inset-0 bg-black/60 backdrop-blur-[2px]" />
@@ -69,25 +81,27 @@ const Index = ({ onApplyClick }: IndexProps) => {
 
         <div className="container mx-auto px-4 relative z-10">
           <div className="max-w-4xl">
-            <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-6 leading-[1.1]">
-              <span className="block animate-fade-in" style={{ animationDelay: "0.1s" }}>Building</span>
-              <span className="block text-secondary animate-fade-in" style={{ animationDelay: "0.3s" }}>Tomorrow's</span>
-              <span className="block animate-fade-in" style={{ animationDelay: "0.5s" }}>Leaders Today</span>
-            </h1>
+            <div className="py-8 md:py-12">
+              <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-6 leading-[1.1]">
+                <span className="block animate-fade-in" style={{ animationDelay: "0.1s" }}>Building</span>
+                <span className="block text-secondary animate-fade-in" style={{ animationDelay: "0.3s" }}>Tomorrow's</span>
+                <span className="block animate-fade-in" style={{ animationDelay: "0.5s" }}>Leaders Today</span>
+              </h1>
 
-            <p className="text-lg text-white/90 mb-8 max-w-lg font-medium">
-              35+ years of excellence in education, shaping confident minds and compassionate hearts.
-            </p>
+              <p className="text-lg text-white/90 mb-8 max-w-xl font-medium leading-relaxed">
+                35+ years of excellence in education, shaping confident minds and compassionate hearts.
+              </p>
 
-            <div className="flex flex-wrap gap-4">
-              <Button
-                size="lg"
-                className="bg-secondary hover:bg-secondary/90 text-secondary-foreground font-semibold px-8 rounded-full transition-all duration-300 transform hover:scale-105"
-                onClick={onApplyClick}
-              >
-                Start Application
-                <ArrowRight className="w-4 h-4 ml-2" />
-              </Button>
+              <div className="flex flex-wrap gap-4">
+                <Button
+                  size="lg"
+                  className="bg-secondary hover:bg-secondary/90 text-secondary-foreground font-semibold px-8 rounded-full transition-all duration-300 transform hover:scale-105"
+                  onClick={onApplyClick}
+                >
+                  Start Application
+                  <ArrowRight className="w-4 h-4 ml-2" />
+                </Button>
+              </div>
             </div>
           </div>
         </div>
@@ -126,9 +140,11 @@ const Index = ({ onApplyClick }: IndexProps) => {
             <div className="relative">
               <div className="aspect-[4/3] rounded-2xl overflow-hidden shadow-2xl">
                 <img
-                  src="https://images.unsplash.com/photo-1546410531-bb4caa6b424d?q=80&w=2070&auto=format&fit=crop"
+                  src={ABOUT_IMAGE}
                   alt="Little graduate with dreams"
                   className="w-full h-full object-cover"
+                  loading="lazy"
+                  decoding="async"
                 />
               </div>
               <div className="absolute -bottom-6 -left-6 bg-secondary text-secondary-foreground p-5 rounded-xl shadow-lg">
@@ -243,6 +259,8 @@ const Index = ({ onApplyClick }: IndexProps) => {
                         src={event.src}
                         alt={`Recent event ${index + 1}`}
                         className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-110"
+                        loading="lazy"
+                        decoding="async"
                       />
                     </div>
                     <p className="mt-3 text-sm font-medium text-foreground truncate text-center">
@@ -281,6 +299,8 @@ const Index = ({ onApplyClick }: IndexProps) => {
                         src={event.src}
                         alt={`Sports event ${index + 1}`}
                         className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-110"
+                        loading="lazy"
+                        decoding="async"
                       />
                     </div>
                     <p className="mt-3 text-sm font-medium text-foreground truncate text-center">
@@ -319,6 +339,8 @@ const Index = ({ onApplyClick }: IndexProps) => {
                         src={event.src}
                         alt={`Exhibition ${index + 1}`}
                         className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-110"
+                        loading="lazy"
+                        decoding="async"
                       />
                     </div>
                     <p className="mt-3 text-sm font-medium text-foreground truncate text-center">
@@ -360,20 +382,17 @@ const Index = ({ onApplyClick }: IndexProps) => {
           </div>
 
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-            {[
-              { src: "https://images.unsplash.com/photo-1580582932707-520aed937b7b?w=300&h=200&fit=crop&q=80" },
-              { src: "https://images.unsplash.com/photo-1562774053-701939374585?w=300&h=200&fit=crop&q=80" },
-              { src: "https://images.unsplash.com/photo-1571902943202-507ec2618e8f?w=300&h=200&fit=crop&q=80" },
-              { src: "https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=300&h=200&fit=crop&q=80" },
-            ].map((img, i) => (
+            {CAMPUS_IMAGES.map((src, i) => (
               <div
                 key={i}
                 className="overflow-hidden rounded-xl group"
               >
                 <img
-                  src={img.src}
+                  src={src}
                   alt="Campus"
                   className="w-full h-40 object-cover group-hover:scale-105 transition-transform duration-500"
+                  loading="lazy"
+                  decoding="async"
                 />
               </div>
             ))}
