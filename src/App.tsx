@@ -32,7 +32,7 @@ const AppContent = () => {
 
   return (
     <div className="min-h-screen flex flex-col">
-      <Navbar onApplyClick={() => setIsContactOpen(true)} />
+      <Navbar />
       <Suspense fallback={<PageLoader />}>
         <Routes>
           <Route element={<Layout />}>

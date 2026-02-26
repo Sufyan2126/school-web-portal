@@ -1,38 +1,13 @@
-import { useState } from "react";
-import { z } from "zod";
-import { useForm } from "react-hook-form";
-import { zodResolver } from "@hookform/resolvers/zod";
 import { SectionHeading } from "@/components/SectionHeading";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { Textarea } from "@/components/ui/textarea";
 import {
-  Form,
-  FormControl,
-  FormField,
-  FormItem,
-  FormLabel,
-  FormMessage,
-} from "@/components/ui/form";
-import { useToast } from "@/hooks/use-toast";
-import { 
-  MapPin, 
-  Phone, 
-  Mail, 
-  Clock, 
-  Send, 
-  Loader2,
-  MessageCircle 
+  MapPin,
+  Phone,
+  Mail,
+  Clock,
+  MessageCircle
 } from "lucide-react";
-
-const contactSchema = z.object({
-  name: z.string().trim().min(2, "Name must be at least 2 characters").max(100, "Name is too long"),
-  phone: z.string().trim().min(10, "Please enter a valid phone number").max(15, "Phone number is too long"),
-  description: z.string().trim().min(10, "Please enter at least 10 characters").max(1000, "Message is too long"),
-});
-
-type ContactFormValues = z.infer<typeof contactSchema>;
 
 const contactInfo = [
   {
@@ -62,33 +37,6 @@ const contactInfo = [
 ];
 
 const Contact = () => {
-  const [isSubmitting, setIsSubmitting] = useState(false);
-  const { toast } = useToast();
-
-  const form = useForm<ContactFormValues>({
-    resolver: zodResolver(contactSchema),
-    defaultValues: {
-      name: "",
-      phone: "",
-      description: "",
-    },
-  });
-
-  const onSubmit = async (data: ContactFormValues) => {
-    setIsSubmitting(true);
-    
-    // Simulate API call
-    await new Promise((resolve) => setTimeout(resolve, 1500));
-    
-    toast({
-      title: "Message Sent!",
-      description: `Thank you, ${data.name}! We'll get back to you soon.`,
-    });
-    
-    form.reset();
-    setIsSubmitting(false);
-  };
-
   return (
     <div className="overflow-hidden">
       {/* Hero Section */}
@@ -106,84 +54,12 @@ const Contact = () => {
         </div>
       </section>
 
-      {/* Contact Form & Info */}
+      {/* Contact Info */}
       <section className="py-16 md:py-24">
         <div className="container mx-auto px-4">
-          <div className="grid lg:grid-cols-2 gap-12">
-            {/* Contact Form */}
-            <Card className="border-0 shadow-xl animate-fade-in-left">
-              <CardContent className="p-8">
-                <h2 className="text-2xl font-bold text-foreground mb-2">
-                  Send Us a Message
-                </h2>
-                <p className="text-muted-foreground mb-6">
-                  Fill out the form below and we'll get back to you shortly.
-                </p>
-                <Form {...form}>
-                  <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
-                    <FormField
-                      control={form.control}
-                      name="name"
-                      render={({ field }) => (
-                        <FormItem>
-                          <FormLabel>Full Name</FormLabel>
-                          <FormControl>
-                            <Input placeholder="Enter your full name" {...field} />
-                          </FormControl>
-                          <FormMessage />
-                        </FormItem>
-                      )}
-                    />
-                    <FormField
-                      control={form.control}
-                      name="phone"
-                      render={({ field }) => (
-                        <FormItem>
-                          <FormLabel>Phone Number</FormLabel>
-                          <FormControl>
-                            <Input placeholder="Enter your phone number" type="tel" {...field} />
-                          </FormControl>
-                          <FormMessage />
-                        </FormItem>
-                      )}
-                    />
-                    <FormField
-                      control={form.control}
-                      name="description"
-                      render={({ field }) => (
-                        <FormItem>
-                          <FormLabel>Your Message</FormLabel>
-                          <FormControl>
-                            <Textarea 
-                              placeholder="How can we help you? Tell us about your inquiry..."
-                              className="min-h-[150px] resize-none"
-                              {...field} 
-                            />
-                          </FormControl>
-                          <FormMessage />
-                        </FormItem>
-                      )}
-                    />
-                    <Button type="submit" size="lg" className="w-full" disabled={isSubmitting}>
-                      {isSubmitting ? (
-                        <>
-                          <Loader2 className="w-5 h-5 animate-spin" />
-                          Sending...
-                        </>
-                      ) : (
-                        <>
-                          <Send className="w-5 h-5" />
-                          Send Message
-                        </>
-                      )}
-                    </Button>
-                  </form>
-                </Form>
-              </CardContent>
-            </Card>
-
+          <div className="max-w-3xl mx-auto">
             {/* Contact Information */}
-            <div className="space-y-6 animate-fade-in-right">
+            <div className="space-y-6 animate-fade-in-up">
               <div>
                 <h2 className="text-2xl font-bold text-foreground mb-2">
                   Contact Information

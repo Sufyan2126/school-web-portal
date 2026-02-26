@@ -1,12 +1,8 @@
 import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { Menu, X } from "lucide-react";
-import { Button } from "@/components/ui/button";
-import { cn } from "@/lib/utils";
+import { Menu, X, PhoneCall } from "lucide-react";
 
-interface NavbarProps {
-  onApplyClick: () => void;
-}
+import { cn } from "@/lib/utils";
 
 const navLinks = [
   { name: "Home", path: "/" },
@@ -16,7 +12,7 @@ const navLinks = [
   { name: "Contact", path: "/contact" },
 ];
 
-export const Navbar = ({ onApplyClick }: NavbarProps) => {
+export const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const location = useLocation();
 
@@ -57,14 +53,15 @@ export const Navbar = ({ onApplyClick }: NavbarProps) => {
             ))}
           </div>
 
-          {/* Apply Button & Mobile Menu Toggle */}
+          {/* Call Button & Mobile Menu Toggle */}
           <div className="flex items-center gap-3">
-            <Button
-              onClick={onApplyClick}
-              className="hidden sm:inline-flex bg-secondary hover:bg-secondary/90 text-secondary-foreground font-semibold animate-pulse-scale rounded-full px-6"
+            <a
+              href="tel:+911234567890"
+              className="hidden sm:inline-flex items-center gap-2 bg-gradient-to-r from-sky-500 to-sky-600 hover:from-sky-600 hover:to-sky-700 text-white font-bold rounded-full px-6 py-2.5 shadow-md hover:shadow-lg transition-all duration-300 transform hover:-translate-y-0.5"
             >
-              Apply Now
-            </Button>
+              <PhoneCall className="w-4 h-4" />
+              <span>Call Us Now</span>
+            </a>
             <button
               className="lg:hidden p-2 hover:bg-muted rounded-md transition-colors"
               onClick={() => setIsOpen(!isOpen)}
@@ -98,15 +95,13 @@ export const Navbar = ({ onApplyClick }: NavbarProps) => {
                 {link.name}
               </Link>
             ))}
-            <Button
-              onClick={() => {
-                onApplyClick();
-                setIsOpen(false);
-              }}
-              className="w-full mt-2 bg-secondary hover:bg-secondary/90 text-secondary-foreground font-semibold rounded-full"
+            <a
+              href="tel:+911234567890"
+              className="w-full mt-2 flex items-center justify-center gap-2 bg-gradient-to-r from-sky-500 to-sky-600 hover:from-sky-600 hover:to-sky-700 text-white font-bold rounded-full py-3 shadow-md transition-all"
             >
-              Apply Now
-            </Button>
+              <PhoneCall className="w-5 h-5" />
+              <span>Call Us Now</span>
+            </a>
           </div>
         </div>
       </div>

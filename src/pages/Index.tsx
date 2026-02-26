@@ -68,7 +68,7 @@ const Index = ({ onApplyClick }: IndexProps) => {
     <div className="overflow-hidden">
       {/* Hero Section - Minimal & Bold */}
       {/* Hero Section - Minimal & Bold with Background Image */}
-      <section className="min-h-[80vh] md:min-h-[calc(100vh-5rem)] flex items-center relative overflow-hidden">
+      <section className="min-h-[calc(100vh-4rem)] md:min-h-[calc(100vh-5rem)] flex items-center relative overflow-hidden">
         {/* Background Image with Overlay */}
         <div
           className="absolute inset-0 z-0 bg-cover bg-center bg-no-repeat"
@@ -79,29 +79,29 @@ const Index = ({ onApplyClick }: IndexProps) => {
           <div className="absolute inset-0 bg-black/60 backdrop-blur-[2px]" />
         </div>
 
-        <div className="container mx-auto px-4 relative z-10">
-          <div className="max-w-4xl">
-            <div className="py-8 md:py-12">
-              <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-6 leading-[1.1]">
-                <span className="block animate-fade-in" style={{ animationDelay: "0.1s" }}>Building</span>
-                <span className="block text-secondary animate-fade-in" style={{ animationDelay: "0.3s" }}>Tomorrow's</span>
-                <span className="block animate-fade-in" style={{ animationDelay: "0.5s" }}>Leaders Today</span>
-              </h1>
+        <div className="container mx-auto px-4 relative z-10 font-sans h-[calc(100vh-4rem)] flex items-center justify-center text-center pb-72 md:h-[calc(100vh-5rem)] md:pb-0">
+          <div className="max-w-4xl flex flex-col items-center justify-center overflow-hidden w-full m-auto h-auto">
+            <h1 className="text-[1.35rem] leading-tight sm:text-3xl md:text-5xl lg:text-6xl font-normal mb-2 md:mb-4 drop-shadow-md text-white animate-fade-in whitespace-nowrap" style={{ animationDelay: "0.1s" }}>
+              Central Public High School
+            </h1>
 
-              <p className="text-lg text-white/90 mb-8 max-w-xl font-medium leading-relaxed">
-                35+ years of excellence in education, shaping confident minds and compassionate hearts.
-              </p>
+            <p className="text-xs sm:text-base lg:text-lg text-white/90 font-light mb-2 md:mb-4 animate-fade-in drop-shadow-sm max-w-2xl leading-relaxed" style={{ animationDelay: "0.2s" }}>
+              Discover a world of excellence. Empowering minds, enriching lives, and shaping the leaders of tomorrow through holistic education and innovation.
+            </p>
 
-              <div className="flex flex-wrap gap-4">
+            <p className="text-[0.65rem] sm:text-lg lg:text-xl text-white font-medium mb-4 md:mb-8 animate-fade-in drop-shadow-md max-w-xl leading-relaxed uppercase tracking-wider" style={{ animationDelay: "0.3s" }}>
+              Managed by Mariyam Welfare Trust
+            </p>
+
+            <div className="animate-fade-in" style={{ animationDelay: "0.4s" }}>
+              <Link to="/about">
                 <Button
-                  size="lg"
-                  className="bg-secondary hover:bg-secondary/90 text-secondary-foreground font-semibold px-8 rounded-full transition-all duration-300 transform hover:scale-105"
-                  onClick={onApplyClick}
+                  size="sm"
+                  className="bg-transparent border-2 border-white text-white hover:bg-white hover:text-black font-medium px-4 py-1 md:px-8 md:py-2 rounded-md shadow-sm transition-all text-[0.65rem] md:text-sm mt-1 md:mt-2"
                 >
-                  Start Application
-                  <ArrowRight className="w-4 h-4 ml-2" />
+                  Read more
                 </Button>
-              </div>
+              </Link>
             </div>
           </div>
         </div>
