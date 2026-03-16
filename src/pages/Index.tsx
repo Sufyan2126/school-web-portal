@@ -23,41 +23,56 @@ import {
   CarouselPrevious,
 } from "@/components/ui/carousel";
 
+import r1 from "../recent_images/r1.jpeg";
+import r2 from "../recent_images/r2.jpeg";
+import r3 from "../recent_images/r3.jpeg";
+import r4 from "../recent_images/r4.jpeg";
+import r5 from "../recent_images/r5.jpeg";
+
+import s1 from "../sports_images/s1.jpeg";
+import s2 from "../sports_images/s2.jpeg";
+import s3 from "../sports_images/s3.jpeg";
+import s4 from "../sports_images/s4.jpeg";
+import s5 from "../sports_images/s5.jpeg";
+
+import e1 from "../exhibition_images/e1.jpeg";
+import e2 from "../exhibition_images/e2.jpeg";
+import e3 from "../exhibition_images/e3.jpeg";
+import e4 from "../exhibition_images/e4.jpeg";
+import e5 from "../exhibition_images/e5.jpeg";
+
+import hero_image from "../hero_image.png";
+import about_image from "../about_image.jpeg";
+
 // Image Constants - Replace these URLs with your own images
 // Image Constants - Replace these URLs with your own images
-const HERO_IMAGE = "https://images.unsplash.com/photo-1571260899304-425eee4c7efc?q=80&w=2070&auto=format&fit=crop";
-const ABOUT_IMAGE = "https://images.unsplash.com/photo-1546410531-bb4caa6b424d?q=80&w=2070&auto=format&fit=crop";
-const CAMPUS_IMAGES = [
-  "https://images.unsplash.com/photo-1580582932707-520aed937b7b?w=300&h=200&fit=crop&q=80",
-  "https://images.unsplash.com/photo-1562774053-701939374585?w=300&h=200&fit=crop&q=80",
-  "https://images.unsplash.com/photo-1571902943202-507ec2618e8f?w=300&h=200&fit=crop&q=80",
-  "https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=300&h=200&fit=crop&q=80"
-];
+const HERO_IMAGE = hero_image;
+const ABOUT_IMAGE = about_image;
+
 
 
 const recentEvents = [
-  { src: "https://images.unsplash.com/photo-1567168544813-cc03465b4fa8?w=400&h=300&fit=crop", desc: "Annual Science Fair 2024" },
-  { src: "https://images.unsplash.com/photo-1492684223066-81342ee5ff30?w=400&h=300&fit=crop", desc: "Cultural Day Celebrations" },
-  { src: "https://images.unsplash.com/photo-1577896851231-70ef18881754?w=400&h=300&fit=crop", desc: "Inter-School Debate Competition" },
-  { src: "https://images.unsplash.com/photo-1532375810709-75b1da00537c?w=400&h=300&fit=crop", desc: "Community Service Drive" },
-  { src: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=400&h=300&fit=crop", desc: "Mathematics Olympiad Winners" },
-  { src: "https://images.unsplash.com/photo-1523050854058-8df90110c9f1?w=400&h=300&fit=crop", desc: "Graduation Ceremony Highlights" },
+  { src: r1, desc: "Annual Science Fair 2024" },
+  { src: r2, desc: "Cultural Day Celebrations" },
+  { src: r3, desc: "Inter-School Debate Competition" },
+  { src: r4, desc: "Community Service Drive" },
+  { src: r5, desc: "Mathematics Olympiad Winners" },
 ];
 
 const sportsEvents = [
-  { src: "https://images.unsplash.com/photo-1574629810360-7efbbe195018?w=400&h=300&fit=crop", desc: "Annual Sports Meet Finals" },
-  { src: "https://images.unsplash.com/photo-1531415074968-036ba1b575da?w=400&h=300&fit=crop", desc: "Basketball Championship" },
-  { src: "https://images.unsplash.com/photo-1461896836934-28e4c76c1e06?w=400&h=300&fit=crop", desc: "Football League Match" },
-  { src: "https://images.unsplash.com/photo-1587280501635-68a0e82cd5ff?w=400&h=300&fit=crop", desc: "Tennis Tournament" },
-  { src: "https://images.unsplash.com/photo-1546519638-68e109498ffc?w=400&h=300&fit=crop", desc: "Swimming Gala 2024" },
+  { src: s1, desc: "Annual Sports Meet Finals" },
+  { src: s2, desc: "Basketball Championship" },
+  { src: s3, desc: "Football League Match" },
+  { src: s4, desc: "Tennis Tournament" },
+  { src: s5, desc: "Swimming Gala 2024" },
 ];
 
 const exhibitionEvents = [
-  { src: "https://images.unsplash.com/photo-1594608661623-aa0bd3a69d98?w=400&h=300&fit=crop", desc: "Art & Craft Exhibition" },
-  { src: "https://images.unsplash.com/photo-1560523159-6b681a1e1852?w=400&h=300&fit=crop", desc: "Robotics Showcase" },
-  { src: "https://images.unsplash.com/photo-1513475382585-d06e58bcb0e0?w=400&h=300&fit=crop", desc: "Environmental Projects" },
-  { src: "https://images.unsplash.com/photo-1561484930-998b6a7b22e8?w=400&h=300&fit=crop", desc: "Literature & Poetry Corner" },
-  { src: "https://images.unsplash.com/photo-1580927752452-89d86da3fa0a?w=400&h=300&fit=crop", desc: "History & Heritage Display" },
+  { src: e1, desc: "Art & Craft Exhibition" },
+  { src: e2, desc: "Robotics Showcase" },
+  { src: e3, desc: "Environmental Projects" },
+  { src: e4, desc: "Literature & Poetry Corner" },
+  { src: e5, desc: "History & Heritage Display" },
 ];
 interface IndexProps {
   onApplyClick?: () => void;
@@ -66,49 +81,70 @@ interface IndexProps {
 const Index = ({ onApplyClick }: IndexProps) => {
   return (
     <div className="overflow-hidden">
-      {/* Hero Section - Minimal & Bold */}
-      {/* Hero Section - Minimal & Bold with Background Image */}
-      <section className="min-h-[calc(100vh-4rem)] md:min-h-[calc(100vh-5rem)] flex items-center relative overflow-hidden">
-        {/* Background Image with Overlay */}
-        <div
-          className="absolute inset-0 z-0 bg-cover bg-center bg-no-repeat"
-          style={{
-            backgroundImage: `url('${HERO_IMAGE}')`,
-          }}
-        >
-          <div className="absolute inset-0 bg-black/60 backdrop-blur-[2px]" />
+      {/* Hero Section - Responsive Split Layout */}
+      <section className="min-h-[calc(100vh-4rem)] md:min-h-[calc(100vh-5rem)] flex items-center relative overflow-hidden bg-background">
+        {/* Background Image Container - Visible on all screens now */}
+        <div className="absolute top-0 bottom-0 right-0 w-full sm:w-1/2 md:w-1/2 z-0 animate-fade-in overflow-hidden" style={{ animationDelay: "0.2s" }}>
+          <img
+            src={HERO_IMAGE}
+            alt="Central Public High School Campus"
+            className="w-full h-full object-cover object-[75%]"
+            loading="eager"
+          />
+          {/* Gradient Overlay moving from left (background color) to transparent (right) */}
+          <div className="absolute inset-0 bg-gradient-to-r from-background via-background/60 md:via-background/40 to-transparent w-full pointer-events-none" />
+          {/* Solid fade on the exact left edge to ensure smooth transition from solid color */}
+          <div className="absolute inset-y-0 left-0 w-24 sm:w-32 md:w-32 bg-gradient-to-r from-background to-transparent pointer-events-none" />
         </div>
 
-        <div className="container mx-auto px-4 relative z-10 font-sans h-[calc(100vh-4rem)] flex items-center justify-center text-center pb-72 md:h-[calc(100vh-5rem)] md:pb-0">
-          <div className="max-w-4xl flex flex-col items-center justify-center overflow-hidden w-full m-auto h-auto">
-            <h1 className="text-[1.35rem] leading-tight sm:text-3xl md:text-5xl lg:text-6xl font-normal mb-2 md:mb-4 drop-shadow-md text-white animate-fade-in whitespace-nowrap" style={{ animationDelay: "0.1s" }}>
-              Central Public High School
-            </h1>
+        <div className="container mx-auto px-0 relative z-10 w-full pt-1 sm:py-20 lg:py-24 max-w-7xl -mt-24 sm:mt-0">
+          <div className="flex flex-row items-center justify-between h-full">
 
-            <p className="text-xs sm:text-base lg:text-lg text-white/90 font-light mb-2 md:mb-4 animate-fade-in drop-shadow-sm max-w-2xl leading-relaxed" style={{ animationDelay: "0.2s" }}>
-              Discover a world of excellence. Empowering minds, enriching lives, and shaping the leaders of tomorrow through holistic education and innovation.
-            </p>
+            {/* Left Column - Content */}
+            <div className="w-full sm:w-1/2 md:w-1/2 flex flex-col items-start text-left pl-6 sm:pl-10 md:pl-16 lg:pl-20 pr-6 sm:pr-8 md:pr-10 lg:pr-16 relative z-20">
+              {/* School Logo */}
+              <div className="w-12 h-12 sm:w-16 sm:h-16 md:w-20 md:h-20 bg-primary/10 backdrop-blur-md rounded-2xl flex items-center justify-center mb-4 sm:mb-6 md:mb-8 border border-primary/20 shadow-xl overflow-hidden group hover:scale-105 transition-transform duration-300">
+                <GraduationCap className="w-6 h-6 sm:w-8 sm:h-8 md:w-10 md:h-10 text-primary drop-shadow-none" />
+              </div>
 
-            <p className="text-[0.65rem] sm:text-lg lg:text-xl text-white font-medium mb-4 md:mb-8 animate-fade-in drop-shadow-md max-w-xl leading-relaxed uppercase tracking-wider" style={{ animationDelay: "0.3s" }}>
-              Managed by Mariyam Welfare Trust
-            </p>
+              {/* School Name */}
+              <h1
+                className="text-4xl sm:text-5xl md:text-5xl lg:text-5xl xl:text-6xl mb-3 sm:mb-4 md:mb-5 text-foreground drop-shadow-none animate-fade-in leading-[1.1]"
+                style={{ fontFamily: "'Caveat Brush', cursive" }}
+              >
+                <span className="block whitespace-nowrap">Central Public High School</span>
+                <span className="block text-primary drop-shadow-none mt-0.5 sm:mt-1">Junior College</span>
+              </h1>
 
-            <div className="animate-fade-in" style={{ animationDelay: "0.4s" }}>
-              <Link to="/about">
-                <Button
-                  size="sm"
-                  className="bg-transparent border-2 border-white text-white hover:bg-white hover:text-black font-medium px-4 py-1 md:px-8 md:py-2 rounded-md shadow-sm transition-all text-[0.65rem] md:text-sm mt-1 md:mt-2"
-                >
-                  Read more
-                </Button>
-              </Link>
+
+
+              <p className="text-[0.65rem] sm:text-xs md:text-sm text-foreground/80 md:text-muted-foreground font-semibold mb-6 sm:mb-8 md:mb-10 animate-fade-in uppercase tracking-[0.1em] sm:tracking-[0.2em]" style={{ animationDelay: "0.2s" }}>
+                Managed by Mariyam Educational & <b /> Welfare Trust
+              </p>
+
+              {/* Action Button */}
+              <div className="animate-fade-in w-max" style={{ animationDelay: "0.3s" }}>
+                <Link to="/about">
+                  <Button
+                    size="sm"
+                    className="bg-primary hover:bg-primary/90 text-primary-foreground font-semibold px-4 sm:px-6 py-4 sm:py-5 md:px-8 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1 text-xs sm:text-sm group"
+                  >
+                    Read more
+                    <ArrowRight className="ml-1.5 sm:ml-2 w-3 h-3 sm:w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                  </Button>
+                </Link>
+              </div>
             </div>
+
+            {/* Empty Right Column just for spacing purposes */}
+            <div className="hidden sm:block sm:w-1/2 md:w-1/2" />
+
           </div>
         </div>
-      </section>
+      </section >
 
       {/* About Section */}
-      <section className="py-20 bg-muted">
+      < section className="py-20" >
         <div className="container mx-auto px-4">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div className="space-y-6">
@@ -128,7 +164,7 @@ const Index = ({ onApplyClick }: IndexProps) => {
                   { icon: Award, label: "Excellence" },
                   { icon: Star, label: "Innovation" },
                 ].map((item, i) => (
-                  <div key={i} className="flex items-center gap-3 p-3 bg-background rounded-lg">
+                  <div key={i} className="flex items-center gap-3 p-3 bg-background border border-border rounded-lg shadow-sm">
                     <div className="w-10 h-10 bg-primary/10 rounded-lg flex items-center justify-center">
                       <item.icon className="w-5 h-5 text-primary" />
                     </div>
@@ -154,10 +190,10 @@ const Index = ({ onApplyClick }: IndexProps) => {
             </div>
           </div>
         </div>
-      </section>
+      </section >
 
       {/* Programs Section */}
-      <section className="py-20">
+      < section className="py-20" >
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
             <div className="inline-block px-4 py-1 bg-primary/10 text-primary rounded-full text-sm font-medium mb-4">
@@ -210,10 +246,10 @@ const Index = ({ onApplyClick }: IndexProps) => {
             ))}
           </div>
         </div>
-      </section>
+      </section >
 
       {/* Stats Section */}
-      <section className="py-16 bg-primary">
+      < section className="py-16 bg-primary" >
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
             {[
@@ -234,10 +270,10 @@ const Index = ({ onApplyClick }: IndexProps) => {
             ))}
           </div>
         </div>
-      </section>
+      </section >
 
       {/* Recent Events */}
-      <section className="py-16 md:py-24">
+      < section className="py-16 md:py-24" >
         <div className="container mx-auto px-4">
           <SectionHeading
             title="Recent Events"
@@ -274,10 +310,10 @@ const Index = ({ onApplyClick }: IndexProps) => {
             <CarouselNext className="-right-4 h-10 w-10 md:h-12 md:w-12 bg-primary hover:bg-primary/90 text-white border-2 border-white/20 shadow-xl transition-all duration-300 hover:scale-110 z-10" />
           </Carousel>
         </div>
-      </section>
+      </section >
 
       {/* Sports Events */}
-      <section className="py-16 md:py-24 bg-muted">
+      < section className="py-16 md:py-24" >
         <div className="container mx-auto px-4">
           <SectionHeading
             title="Sports Events"
@@ -314,10 +350,10 @@ const Index = ({ onApplyClick }: IndexProps) => {
             <CarouselNext className="-right-4 h-10 w-10 md:h-12 md:w-12 bg-primary hover:bg-primary/90 text-white border-2 border-white/20 shadow-xl transition-all duration-300 hover:scale-110 z-10" />
           </Carousel>
         </div>
-      </section>
+      </section >
 
       {/* Exhibition Section */}
-      <section className="py-16 md:py-24">
+      < section className="py-16 md:py-24" >
         <div className="container mx-auto px-4">
           <SectionHeading
             title="Exhibition"
@@ -354,54 +390,14 @@ const Index = ({ onApplyClick }: IndexProps) => {
             <CarouselNext className="-right-4 h-10 w-10 md:h-12 md:w-12 bg-primary hover:bg-primary/90 text-white border-2 border-white/20 shadow-xl transition-all duration-300 hover:scale-110 z-10" />
           </Carousel>
         </div>
-      </section>
+      </section >
 
-      {/* Never Miss an Event CTA */}
-      <section className="py-16 md:py-24 bg-primary text-primary-foreground">
-        <div className="container mx-auto px-4 text-center">
-          <Calendar className="w-16 h-16 mx-auto mb-6 text-secondary" />
-          <h2 className="text-2xl md:text-4xl font-bold mb-4 animate-fade-in">
-            Never Miss an Event
-          </h2>
-          <p className="text-primary-foreground/80 text-lg max-w-2xl mx-auto animate-fade-in" style={{ animationDelay: "0.1s" }}>
-            Subscribe to our newsletter
-          </p>
-        </div>
-      </section>
 
-      {/* Campus Gallery */}
-      <section className="py-20 bg-muted">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-12">
-            <div className="inline-block px-4 py-1 bg-secondary/20 text-secondary rounded-full text-sm font-medium mb-4">
-              Campus Life
-            </div>
-            <h2 className="text-3xl md:text-4xl font-bold text-foreground">
-              Where Learning Comes Alive
-            </h2>
-          </div>
 
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-            {CAMPUS_IMAGES.map((src, i) => (
-              <div
-                key={i}
-                className="overflow-hidden rounded-xl group"
-              >
-                <img
-                  src={src}
-                  alt="Campus"
-                  className="w-full h-40 object-cover group-hover:scale-105 transition-transform duration-500"
-                  loading="lazy"
-                  decoding="async"
-                />
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+
 
       {/* CTA Section */}
-      <section className="py-20 bg-gradient-to-br from-secondary via-secondary to-[hsl(25,95%,55%)]">
+      < section className="py-20 bg-gradient-to-br from-secondary via-secondary to-[hsl(25,95%,55%)]" >
         <div className="container mx-auto px-4 text-center">
           <h2 className="text-3xl md:text-4xl font-bold text-secondary-foreground mb-4">
             Begin Your Journey With Us
@@ -409,16 +405,10 @@ const Index = ({ onApplyClick }: IndexProps) => {
           <p className="text-secondary-foreground/80 mb-8 max-w-lg mx-auto">
             Admissions are open for 2024-25. Join our family of achievers and dreamers.
           </p>
-          <Button
-            size="lg"
-            className="bg-primary hover:bg-primary/90 text-primary-foreground font-semibold px-8 rounded-full"
-            onClick={onApplyClick}
-          >
-            Apply Now
-          </Button>
+
         </div>
-      </section>
-    </div>
+      </section >
+    </div >
   );
 };
 

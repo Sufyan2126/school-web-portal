@@ -50,12 +50,12 @@ const About = () => {
                 <span className="text-primary"> Building Futures</span>
               </h1>
               <p className="text-muted-foreground text-lg mb-6 leading-relaxed">
-                For over 35 years, Springfield Academy has been at the forefront of education, 
-                combining traditional values with modern teaching methodologies. Our commitment 
+                For over 35 years, Springfield Academy has been at the forefront of education,
+                combining traditional values with modern teaching methodologies. Our commitment
                 to excellence has helped shape thousands of successful individuals.
               </p>
               <p className="text-muted-foreground text-lg leading-relaxed">
-                We believe that every child has unique potential, and our role is to provide 
+                We believe that every child has unique potential, and our role is to provide
                 the environment and guidance to help them discover and develop their talents.
               </p>
             </div>
@@ -81,7 +81,7 @@ const About = () => {
                 </div>
                 <div className="text-accent-foreground/80">Pass Rate</div>
               </div>
-              <div className="bg-muted rounded-2xl p-6 text-foreground mt-8">
+              <div className="bg-background rounded-2xl p-6 text-foreground mt-8">
                 <Target className="w-10 h-10 mb-4 text-primary" />
                 <div className="text-3xl font-bold">
                   <AnimatedCounter end={50} suffix="+" duration={2000} />
@@ -105,9 +105,9 @@ const About = () => {
                 </div>
                 <h3 className="text-2xl font-bold text-foreground mb-4">Our Vision</h3>
                 <p className="text-muted-foreground leading-relaxed">
-                  To be a leading institution that nurtures globally competent individuals 
-                  with strong moral values, critical thinking abilities, and a passion for 
-                  lifelong learning. We envision our students becoming leaders who contribute 
+                  To be a leading institution that nurtures globally competent individuals
+                  with strong moral values, critical thinking abilities, and a passion for
+                  lifelong learning. We envision our students becoming leaders who contribute
                   positively to society.
                 </p>
               </CardContent>
@@ -120,9 +120,9 @@ const About = () => {
                 </div>
                 <h3 className="text-2xl font-bold text-foreground mb-4">Our Mission</h3>
                 <p className="text-muted-foreground leading-relaxed">
-                  To provide holistic education that develops intellectual curiosity, 
-                  creativity, and character. We are committed to creating a supportive 
-                  learning environment that encourages students to explore, question, 
+                  To provide holistic education that develops intellectual curiosity,
+                  creativity, and character. We are committed to creating a supportive
+                  learning environment that encourages students to explore, question,
                   and grow into responsible citizens.
                 </p>
               </CardContent>
@@ -132,7 +132,7 @@ const About = () => {
       </section>
 
       {/* Core Values */}
-      <section className="py-16 md:py-24 bg-muted">
+      <section className="py-16 md:py-24">
         <div className="container mx-auto px-4">
           <SectionHeading
             title="Our Core Values"
@@ -209,8 +209,8 @@ const About = () => {
               Message from the Principal
             </h2>
             <blockquote className="text-lg md:text-xl text-primary-foreground/90 italic mb-6 animate-fade-in" style={{ animationDelay: "0.2s" }}>
-              "At Springfield Academy, we don't just educate minds; we nurture souls and build 
-              character. Our commitment is to prepare students not just for exams, but for life. 
+              "At Springfield Academy, we don't just educate minds; we nurture souls and build
+              character. Our commitment is to prepare students not just for exams, but for life.
               Every child who walks through our doors is a future leader, and we treat them as such."
             </blockquote>
             <div className="animate-fade-in" style={{ animationDelay: "0.3s" }}>

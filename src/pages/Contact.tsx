@@ -135,7 +135,7 @@ const Contact = () => {
       </section>
 
       {/* Map Section */}
-      <section className="py-16 md:py-24 bg-muted">
+      <section className="py-16 md:py-24">
         <div className="container mx-auto px-4">
           <SectionHeading
             title="Find Us"

@@ -55,9 +55,9 @@ const Toppers = () => {
 
       {/* Toppers by Year */}
       {toppersData.map((yearData, yearIndex) => (
-        <section 
-          key={yearData.year} 
-          className={`py-16 md:py-20 ${yearIndex % 2 === 0 ? 'bg-background' : 'bg-muted'}`}
+        <section
+          key={yearData.year}
+          className="py-16 md:py-20 bg-background"
         >
           <div className="container mx-auto px-4">
             <SectionHeading
