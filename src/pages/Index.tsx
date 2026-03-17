@@ -104,8 +104,8 @@ const Index = ({ onApplyClick }: IndexProps) => {
             {/* Left Column - Content */}
             <div className="w-full sm:w-1/2 md:w-1/2 flex flex-col items-start text-left sm:items-center sm:text-center pl-6 sm:pl-10 md:pl-16 lg:pl-20 pr-6 sm:pr-8 md:pr-10 lg:pr-16 relative z-20">
               {/* School Logo */}
-              <div className="w-32 h-32 sm:w-40 sm:h-40 md:w-48 md:h-48 flex items-center justify-center mb-2 sm:mb-3 md:mb-4 lg:mb-4 bg-transparent overflow-hidden group hover:scale-105 transition-transform duration-300">
-                <img src={schoolLogo} alt="School Logo" className="w-full h-full object-contain drop-shadow-md" />
+              <div className="w-12 h-12 sm:w-16 sm:h-16 md:w-20 md:h-20 bg-primary/10 backdrop-blur-md rounded-2xl flex items-center justify-center mb-4 sm:mb-6 md:mb-8 border border-primary/20 shadow-xl overflow-hidden group hover:scale-105 transition-transform duration-300">
+                <GraduationCap className="w-6 h-6 sm:w-8 sm:h-8 md:w-10 md:h-10 text-primary drop-shadow-none" />
               </div>
 
               {/* School Name */}
