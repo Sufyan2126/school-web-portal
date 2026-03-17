@@ -41,7 +41,7 @@ import e3 from "../exhibition_images/e3.jpeg";
 import e4 from "../exhibition_images/e4.jpeg";
 import e5 from "../exhibition_images/e5.jpeg";
 
-import hero_image from "../hero_image.png";
+import hero_image from "../hero_image.jpeg";
 import about_image from "../about_image.jpeg";
 import schoolLogo from "../logo.png";
 
