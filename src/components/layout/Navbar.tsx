@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Menu, X, PhoneCall } from "lucide-react";
+import schoolLogo from "../../logo.png";
 
 import { cn } from "@/lib/utils";
 
@@ -23,7 +24,7 @@ export const Navbar = () => {
           {/* Logo */}
           <Link to="/" className="flex items-center gap-2">
             <div className="w-10 h-10 flex items-center justify-center overflow-hidden">
-              <img src="/src/logo.png" alt="School Logo" className="w-full h-full object-contain" />
+              <img src={schoolLogo} alt="School Logo" className="w-full h-full object-contain" />
             </div>
             <div className="flex flex-col">
               <span className="text-lg md:text-xl font-bold text-foreground leading-none">
