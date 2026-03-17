@@ -412,3 +412,4 @@ const Index = ({ onApplyClick }: IndexProps) => {
   );
 };
 
+export default Index;
