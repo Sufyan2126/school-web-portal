@@ -102,7 +102,7 @@ const Index = ({ onApplyClick }: IndexProps) => {
           <div className="flex flex-row items-center justify-between h-full">
 
             {/* Left Column - Content */}
-            <div className="w-full sm:w-1/2 md:w-1/2 flex flex-col items-center text-center pl-6 sm:pl-10 md:pl-16 lg:pl-20 pr-6 sm:pr-8 md:pr-10 lg:pr-16 relative z-20">
+            <div className="w-full sm:w-1/2 md:w-1/2 flex flex-col items-start text-left sm:items-center sm:text-center pl-6 sm:pl-10 md:pl-16 lg:pl-20 pr-6 sm:pr-8 md:pr-10 lg:pr-16 relative z-20">
               {/* School Logo */}
               <div className="w-32 h-32 sm:w-40 sm:h-40 md:w-48 md:h-48 flex items-center justify-center mb-2 sm:mb-3 md:mb-4 lg:mb-4 bg-transparent overflow-hidden group hover:scale-105 transition-transform duration-300">
                 <img src={schoolLogo} alt="School Logo" className="w-full h-full object-contain drop-shadow-md" />
