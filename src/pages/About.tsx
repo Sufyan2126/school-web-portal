@@ -27,11 +27,11 @@ const values = [
 ];
 
 const milestones = [
-  { year: "1985", title: "Foundation", description: "Springfield Academy was established with 50 students." },
-  { year: "1995", title: "CBSE Affiliation", description: "Received official CBSE affiliation and recognition." },
-  { year: "2005", title: "Campus Expansion", description: "Expanded to a 25-acre modern campus with new facilities." },
-  { year: "2015", title: "Smart Classrooms", description: "Introduced digital learning with smart classrooms." },
-  { year: "2023", title: "AI Lab Launch", description: "Launched state-of-the-art Robotics and AI laboratory." },
+  { year: "2005", title: "Foundation", description: "Springfield Academy was established with 50 students." },
+  { year: "2010", title: "CBSE Affiliation", description: "Received official CBSE affiliation and recognition." },
+  { year: "2015", title: "Campus Expansion", description: "Expanded to a 25-acre modern campus with new facilities." },
+  { year: "2020", title: "Smart Classrooms", description: "Introduced digital learning with smart classrooms." },
+  { year: "2025", title: "AI Lab Launch", description: "Launched state-of-the-art Robotics and AI laboratory." },
 ];
 
 const About = () => {
@@ -198,24 +198,36 @@ const About = () => {
         </div>
       </section>
 
-      {/* Principal Message */}
+      {/* Principal & Vice Principal */}
       <section className="py-16 md:py-24 bg-primary text-primary-foreground">
         <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto text-center">
-            <div className="w-24 h-24 bg-secondary rounded-full mx-auto mb-6 flex items-center justify-center animate-fade-in">
-              <span className="text-3xl font-bold text-secondary-foreground">DR</span>
+          <div className="text-center mb-10 animate-fade-in">
+            <h2 className="text-2xl md:text-3xl font-bold">School Leadership</h2>
+            <p className="text-primary-foreground/70 mt-2 text-sm">Guiding our institution with vision and dedication</p>
+          </div>
+          <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+            {/* Principal */}
+            <div className="bg-primary-foreground/10 rounded-2xl p-8 text-center animate-fade-in border border-primary-foreground/20 hover:bg-primary-foreground/15 transition-colors duration-300">
+              <div className="w-24 h-24 bg-secondary rounded-full mx-auto mb-4 flex items-center justify-center">
+                <span className="text-2xl font-bold text-secondary-foreground">F</span>
+              </div>
+              <h3 className="text-xl font-bold text-primary-foreground mb-1">Mrs. Farhana</h3>
+              <p className="text-secondary text-sm font-semibold uppercase tracking-wider mb-4">Principal</p>
+              <p className="text-primary-foreground/80 text-sm leading-relaxed">
+                With over 25 years of experience in education, Mr. Farooq leads the school with a vision of academic excellence and holistic student development. His leadership has transformed the institution into a center of learning and innovation.
+              </p>
             </div>
-            <h2 className="text-2xl md:text-3xl font-bold mb-6 animate-fade-in" style={{ animationDelay: "0.1s" }}>
-              Message from the Principal
-            </h2>
-            <blockquote className="text-lg md:text-xl text-primary-foreground/90 italic mb-6 animate-fade-in" style={{ animationDelay: "0.2s" }}>
-              "At Springfield Academy, we don't just educate minds; we nurture souls and build
-              character. Our commitment is to prepare students not just for exams, but for life.
-              Every child who walks through our doors is a future leader, and we treat them as such."
-            </blockquote>
-            <div className="animate-fade-in" style={{ animationDelay: "0.3s" }}>
-              <p className="font-semibold text-secondary">Dr. Ramesh Kumar</p>
-              <p className="text-primary-foreground/70 text-sm">Principal, Springfield Academy</p>
+
+            {/* Vice Principal */}
+            <div className="bg-primary-foreground/10 rounded-2xl p-8 text-center animate-fade-in border border-primary-foreground/20 hover:bg-primary-foreground/15 transition-colors duration-300" style={{ animationDelay: "0.15s" }}>
+              <div className="w-24 h-24 bg-secondary rounded-full mx-auto mb-4 flex items-center justify-center">
+                <span className="text-2xl font-bold text-secondary-foreground">LA</span>
+              </div>
+              <h3 className="text-xl font-bold text-primary-foreground mb-1">Mrs. Lubna Khot</h3>
+              <p className="text-secondary text-sm font-semibold uppercase tracking-wider mb-4">Vice Principal</p>
+              <p className="text-primary-foreground/80 text-sm leading-relaxed">
+                Mrs. Anjum brings 18 years of dedicated teaching and administrative experience. She oversees academic planning, student welfare, and staff coordination, ensuring the school maintains its high standards of education and discipline.
+              </p>
             </div>
           </div>
         </div>

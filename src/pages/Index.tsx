@@ -98,14 +98,14 @@ const Index = ({ onApplyClick }: IndexProps) => {
           <div className="absolute inset-y-0 left-0 w-24 sm:w-32 md:w-32 bg-gradient-to-r from-background to-transparent pointer-events-none" />
         </div>
 
-        <div className="container mx-auto px-0 relative z-10 w-full pt-1 sm:py-20 lg:py-24 max-w-7xl -mt-24 sm:mt-0">
+        <div className="container mx-auto px-0 relative z-10 w-full pt-1 sm:py-20 lg:py-24 max-w-7xl -mt-24 sm:-mt-10">
           <div className="flex flex-row items-center justify-between h-full">
 
             {/* Left Column - Content */}
             <div className="w-full sm:w-1/2 md:w-1/2 flex flex-col items-start text-left sm:items-center sm:text-center pl-6 sm:pl-10 md:pl-16 lg:pl-20 pr-6 sm:pr-8 md:pr-10 lg:pr-16 relative z-20">
               {/* School Logo */}
-              <div className="mr-auto md:mx-auto w-14 h-14 sm:w-[72px] sm:h-[72px] md:w-24 md:h-24 bg-primary/10 backdrop-blur-md rounded-2xl flex items-center justify-center mb-4 sm:mb-6 md:mb-8 border border-primary/20 shadow-xl overflow-hidden group hover:scale-105 transition-transform duration-300">
-                <GraduationCap className="w-7 h-7 sm:w-9 sm:h-9 md:w-12 md:h-12 text-primary drop-shadow-none" />
+              <div className="mr-auto sm:mx-auto w-32 h-32 sm:w-32 sm:h-32 md:w-40 md:h-40 backdrop-blur-md rounded-2xl flex items-center justify-center mb-2 sm:mb-3 md:mb-4 overflow-hidden group hover:scale-105 transition-transform duration-300">
+                <img src={schoolLogo} alt="School Logo" className="w-full h-full object-contain" />
               </div>
               {/* School Name */}
               <h1
@@ -113,13 +113,13 @@ const Index = ({ onApplyClick }: IndexProps) => {
                 style={{ fontFamily: "'Caveat Brush', cursive" }}
               >
                 <span className="block whitespace-nowrap">Central Public High School</span>
-                <span className="block text-primary drop-shadow-none mt-0.5 sm:mt-1">Junior College</span>
+                <span className="block drop-shadow-none mt-0.5 sm:mt-1" style={{ color: "#7c3aed" }}>Junior College</span>
               </h1>
 
 
 
-              <p className="text-[0.65rem] sm:text-xs md:text-sm text-foreground/80 md:text-muted-foreground font-semibold mb-6 sm:mb-8 md:mb-10 animate-fade-in uppercase tracking-[0.1em] sm:tracking-[0.2em]" style={{ animationDelay: "0.2s" }}>
-                Managed by Mariyam Educational & <b /> Welfare Trust
+              <p className="text-[0.65rem] sm:text-xs md:text-sm text-foreground/80 md:text-muted-foreground font-semibold mb-3 sm:mb-4 md:mb-5 animate-fade-in uppercase tracking-[0.1em] sm:tracking-[0.2em]" style={{ animationDelay: "0.2s" }}>
+                Managed by Mariyam Educational &<br />Welfare Trust
               </p>
 
               {/* Action Button */}
@@ -127,7 +127,7 @@ const Index = ({ onApplyClick }: IndexProps) => {
                 <Link to="/about">
                   <Button
                     size="sm"
-                    className="bg-primary hover:bg-primary/90 text-primary-foreground font-semibold px-4 sm:px-6 py-4 sm:py-5 md:px-8 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1 text-xs sm:text-sm group"
+                    className="bg-violet-700 hover:bg-violet-800 text-white font-semibold px-4 sm:px-6 py-4 sm:py-5 md:px-8 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1 text-xs sm:text-sm group"
                   >
                     Read more
                     <ArrowRight className="ml-1.5 sm:ml-2 w-3 h-3 sm:w-4 h-4 group-hover:translate-x-1 transition-transform" />
