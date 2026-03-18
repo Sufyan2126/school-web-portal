@@ -104,13 +104,13 @@ const Index = ({ onApplyClick }: IndexProps) => {
             {/* Left Column - Content */}
             <div className="w-full sm:w-1/2 md:w-1/2 flex flex-col items-start text-left sm:items-center sm:text-center pl-6 sm:pl-10 md:pl-16 lg:pl-20 pr-6 sm:pr-8 md:pr-10 lg:pr-16 relative z-20">
               {/* School Logo */}
-              <div className="mr-auto sm:mx-auto w-40 h-40 sm:w-32 sm:h-32 md:w-40 md:h-40 backdrop-blur-md rounded-2xl flex items-center justify-center mb-2 sm:mb-3 md:mb-4 overflow-hidden group hover:scale-105 transition-transform duration-300">
+              <div className="mr-auto sm:mx-auto w-48 h-48 sm:w-40 sm:h-40 md:w-52 md:h-52 backdrop-blur-md rounded-2xl flex items-center justify-center mb-2 sm:mb-3 md:mb-4 overflow-hidden group hover:scale-105 transition-transform duration-300">
                 <img src={schoolLogo} alt="School Logo" className="w-full h-full object-contain" />
               </div>
               {/* School Name */}
               <h1
-                className="text-4xl sm:text-5xl md:text-5xl lg:text-5xl xl:text-6xl mb-3 sm:mb-4 md:mb-5 text-foreground drop-shadow-none animate-fade-in leading-[1.1]"
-                style={{ fontFamily: "'Caveat Brush', cursive" }}
+                className="text-4xl sm:text-5xl md:text-5xl lg:text-5xl xl:text-6xl font-bold mb-3 sm:mb-4 md:mb-5 text-foreground drop-shadow-none animate-fade-in leading-[1.1]"
+                style={{ fontFamily: "'Caveat Brush', cursive", WebkitTextStroke: "0.5px currentColor" }}
               >
                 <span className="block whitespace-nowrap">Central Public High School</span>
                 <span className="block drop-shadow-none mt-0.5 sm:mt-1" style={{ color: "#7c3aed" }}>Junior College</span>
