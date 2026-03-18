@@ -112,7 +112,7 @@ const Index = ({ onApplyClick }: IndexProps) => {
                 className="text-4xl sm:text-5xl md:text-5xl lg:text-5xl xl:text-6xl font-bold mb-3 sm:mb-4 md:mb-5 text-foreground drop-shadow-none animate-fade-in leading-[1.1]"
                 style={{ fontFamily: "'Caveat Brush', cursive", WebkitTextStroke: "0.5px currentColor" }}
               >
-                <span className="block whitespace-nowrap">Central Public High School</span>
+                <span className="block whitespace-nowrap">Central Public School</span>
                 <span className="block drop-shadow-none mt-0.5 sm:mt-1" style={{ color: "#7c3aed" }}>Junior College</span>
               </h1>
 
