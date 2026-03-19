@@ -42,13 +42,14 @@ import e4 from "../exhibition_images/e4.jpeg";
 import e5 from "../exhibition_images/e5.jpeg";
 
 import hero_image from "../hero_image.jpeg";
+import new_hero_image from "../new_hero_image.jpeg";
 import about_image from "../about_image.jpeg";
 import schoolLogo from "../logo.png";
 import hero_logo from "../hero_logo.png";
 
 // Image Constants - Replace these URLs with your own images
 // Image Constants - Replace these URLs with your own images
-const HERO_IMAGE = hero_image;
+const HERO_IMAGE = new_hero_image;
 const ABOUT_IMAGE = about_image;
 const HERO_LOGO = hero_logo;
 
@@ -100,25 +101,23 @@ const Index = ({ onApplyClick }: IndexProps) => {
           <div className="absolute inset-y-0 left-0 w-24 sm:w-32 md:w-32 bg-gradient-to-r from-background to-transparent pointer-events-none" />
         </div>
 
-        <div className="container mx-auto px-0 relative z-10 w-full pt-1 sm:py-20 lg:py-24 max-w-7xl -mt-24 sm:-mt-10">
+        <div className="container mx-auto px-0 relative z-10 w-full pt-1 sm:py-20 lg:py-24 max-w-7xl -mt-10 sm:-mt-4">
           <div className="flex flex-row items-center justify-between h-full">
 
             {/* Left Column - Content */}
             <div className="w-full sm:w-1/2 md:w-1/2 flex flex-col items-start text-left sm:items-center sm:text-center pl-6 sm:pl-10 md:pl-16 lg:pl-20 pr-6 sm:pr-8 md:pr-10 lg:pr-16 relative z-20">
-              {/* School Logo */}
-              <div className="mr-auto sm:mx-auto w-48 h-48 sm:w-40 sm:h-40 md:w-52 md:h-52 backdrop-blur-md rounded-2xl flex items-center justify-center mb-2 sm:mb-3 md:mb-4 overflow-hidden group hover:scale-105 transition-transform duration-300">
-                <img src={HERO_LOGO} alt="School Logo" className="w-full h-full object-contain" />
-              </div>
               {/* School Name */}
               <h1
                 className="text-4xl sm:text-5xl md:text-5xl lg:text-5xl xl:text-6xl font-bold mb-3 sm:mb-4 md:mb-5 text-foreground drop-shadow-none animate-fade-in leading-[1.1]"
-                style={{ fontFamily: "'Caveat Brush', cursive", WebkitTextStroke: "0.5px currentColor" }}
+                style={{ fontFamily: "'Caveat Brush', cursive", WebkitTextStroke: "1.5px currentColor" }}
               >
                 <span className="block whitespace-nowrap">Central Public School</span>
-                <span className="block drop-shadow-none mt-0.5 sm:mt-1" style={{ color: "#7c3aed" }}>Junior College</span>
+                <span className="block drop-shadow-none mt-0.5 sm:mt-1" style={{ color: "#1d4ed8" }}>Junior College</span>
               </h1>
 
-
+              <p className="text-xs sm:text-sm md:text-base text-foreground/75 mb-3 sm:mb-4 md:mb-5 animate-fade-in leading-relaxed" style={{ animationDelay: "0.15s" }}>
+                A premier institution shaping future leaders through excellence in education, committed to academic brilliance, character building, and all-round development.
+              </p>
 
               <p className="text-[0.65rem] sm:text-xs md:text-sm text-foreground/80 md:text-muted-foreground font-semibold mb-3 sm:mb-4 md:mb-5 animate-fade-in uppercase tracking-[0.1em] sm:tracking-[0.2em]" style={{ animationDelay: "0.2s" }}>
                 Managed by Mariyam Educational &<br />Welfare Trust
@@ -129,7 +128,7 @@ const Index = ({ onApplyClick }: IndexProps) => {
                 <Link to="/about">
                   <Button
                     size="sm"
-                    className="bg-violet-700 hover:bg-violet-800 text-white font-semibold px-4 sm:px-6 py-4 sm:py-5 md:px-8 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1 text-xs sm:text-sm group"
+                    className="bg-blue-700 hover:bg-blue-800 text-white font-semibold px-4 sm:px-6 py-4 sm:py-5 md:px-8 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1 text-xs sm:text-sm group"
                   >
                     Read more
                     <ArrowRight className="ml-1.5 sm:ml-2 w-3 h-3 sm:w-4 h-4 group-hover:translate-x-1 transition-transform" />
