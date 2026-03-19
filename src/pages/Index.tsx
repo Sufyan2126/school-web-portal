@@ -44,11 +44,13 @@ import e5 from "../exhibition_images/e5.jpeg";
 import hero_image from "../hero_image.jpeg";
 import about_image from "../about_image.jpeg";
 import schoolLogo from "../logo.png";
+import hero_logo from "../hero_logo.jpeg";
 
 // Image Constants - Replace these URLs with your own images
 // Image Constants - Replace these URLs with your own images
 const HERO_IMAGE = hero_image;
 const ABOUT_IMAGE = about_image;
+const HERO_LOGO = hero_logo;
 
 
 
@@ -105,7 +107,7 @@ const Index = ({ onApplyClick }: IndexProps) => {
             <div className="w-full sm:w-1/2 md:w-1/2 flex flex-col items-start text-left sm:items-center sm:text-center pl-6 sm:pl-10 md:pl-16 lg:pl-20 pr-6 sm:pr-8 md:pr-10 lg:pr-16 relative z-20">
               {/* School Logo */}
               <div className="mr-auto sm:mx-auto w-48 h-48 sm:w-40 sm:h-40 md:w-52 md:h-52 backdrop-blur-md rounded-2xl flex items-center justify-center mb-2 sm:mb-3 md:mb-4 overflow-hidden group hover:scale-105 transition-transform duration-300">
-                <img src={schoolLogo} alt="School Logo" className="w-full h-full object-contain" />
+                <img src={HERO_LOGO} alt="School Logo" className="w-full h-full object-contain" />
               </div>
               {/* School Name */}
               <h1
