@@ -44,7 +44,7 @@ import e5 from "../exhibition_images/e5.jpeg";
 import hero_image from "../hero_image.jpeg";
 import about_image from "../about_image.jpeg";
 import schoolLogo from "../logo.png";
-import hero_logo from "../hero_logo.jpeg";
+import hero_logo from "../hero_logo.png";
 
 // Image Constants - Replace these URLs with your own images
 // Image Constants - Replace these URLs with your own images
