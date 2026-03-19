@@ -86,7 +86,7 @@ const Index = ({ onApplyClick }: IndexProps) => {
   return (
     <div className="overflow-hidden">
       {/* Hero Section - Responsive Split Layout */}
-      <section className="min-h-[calc(100vh-4rem)] md:min-h-[calc(100vh-5rem)] flex items-center relative overflow-hidden bg-background">
+      <section className="min-h-[calc(75vh-4rem)] md:min-h-[calc(100vh-5rem)] flex items-center relative overflow-hidden bg-background">
         {/* Background Image Container - Visible on all screens now */}
         <div className="absolute top-0 bottom-0 right-0 w-full sm:w-1/2 md:w-1/2 z-0 animate-fade-in overflow-hidden" style={{ animationDelay: "0.2s" }}>
           <img
@@ -116,7 +116,7 @@ const Index = ({ onApplyClick }: IndexProps) => {
               </h1>
 
               <p className="text-xs sm:text-sm md:text-base text-foreground/75 mb-3 sm:mb-4 md:mb-5 animate-fade-in leading-relaxed" style={{ animationDelay: "0.15s" }}>
-                A premier institution shaping future leaders through excellence in education, committed to academic brilliance, character building, and all-round development.
+                A premier institution shaping future leaders through excellence in education, committed to academic brilliance, character building, and all-round development. Our students grow in a vibrant, inclusive environment that fosters curiosity, creativity, and lifelong success.
               </p>
 
               <p className="text-[0.65rem] sm:text-xs md:text-sm text-foreground/80 md:text-muted-foreground font-semibold mb-3 sm:mb-4 md:mb-5 animate-fade-in uppercase tracking-[0.1em] sm:tracking-[0.2em]" style={{ animationDelay: "0.2s" }}>
