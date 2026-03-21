@@ -9,6 +9,7 @@ import { Layout } from "@/components/layout/Layout";
 import { WhatsAppButton } from "@/components/layout/WhatsAppButton";
 import { ContactDialog } from "@/components/ContactDialog";
 import { FAQChatbot } from "@/components/FAQChatbot";
+import { ScrollToTop } from "@/components/ScrollToTop";
 
 // Lazy load pages for better performance
 const Index = lazy(() => import("./pages/Index"));
@@ -32,6 +33,7 @@ const AppContent = () => {
 
   return (
     <div className="min-h-screen flex flex-col">
+      <ScrollToTop />
       <Navbar />
       <Suspense fallback={<PageLoader />}>
         <Routes>
