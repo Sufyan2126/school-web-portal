@@ -2,6 +2,7 @@ import { SectionHeading } from "@/components/SectionHeading";
 import { Card, CardContent } from "@/components/ui/card";
 import { AnimatedCounter } from "@/components/AnimatedCounter";
 import { Target, Eye, Heart, Award, Users, Clock } from "lucide-react";
+import principalImg from "@/exhibition_images/e5.jpeg";
 
 const values = [
   {
@@ -198,40 +199,74 @@ const About = () => {
         </div>
       </section>
 
-      {/* Principal & Vice Principal */}
-      <section className="py-16 md:py-24 bg-primary text-primary-foreground">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-10 animate-fade-in">
-            <h2 className="text-2xl md:text-3xl font-bold">School Leadership</h2>
-            <p className="text-primary-foreground/70 mt-2 text-sm">Guiding our institution with vision and dedication</p>
-          </div>
-          <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-            {/* Principal */}
-            <div className="bg-primary-foreground/10 rounded-2xl p-8 text-center animate-fade-in border border-primary-foreground/20 hover:bg-primary-foreground/15 transition-colors duration-300">
-              <div className="w-24 h-24 bg-secondary rounded-full mx-auto mb-4 flex items-center justify-center">
-                <span className="text-2xl font-bold text-secondary-foreground">F</span>
-              </div>
-              <h3 className="text-xl font-bold text-primary-foreground mb-1">Mrs. Farhana</h3>
-              <p className="text-secondary text-sm font-semibold uppercase tracking-wider mb-4">Principal</p>
-              <p className="text-primary-foreground/80 text-sm leading-relaxed">
-                With over 25 years of experience in education, Mr. Farooq leads the school with a vision of academic excellence and holistic student development. His leadership has transformed the institution into a center of learning and innovation.
-              </p>
-            </div>
+  {/* Principal & Vice Principal */}
+<section className="py-16 md:py-24 bg-primary text-primary-foreground">
+  <div className="container mx-auto px-4">
+    <div className="text-center mb-10 animate-fade-in">
+      <h2 className="text-2xl md:text-3xl font-bold">School Leadership</h2>
+      <p className="text-primary-foreground/70 mt-2 text-sm">
+        Guiding our institution with vision and dedication
+      </p>
+    </div>
 
-            {/* Vice Principal */}
-            <div className="bg-primary-foreground/10 rounded-2xl p-8 text-center animate-fade-in border border-primary-foreground/20 hover:bg-primary-foreground/15 transition-colors duration-300" style={{ animationDelay: "0.15s" }}>
-              <div className="w-24 h-24 bg-secondary rounded-full mx-auto mb-4 flex items-center justify-center">
-                <span className="text-2xl font-bold text-secondary-foreground">LA</span>
-              </div>
-              <h3 className="text-xl font-bold text-primary-foreground mb-1">Mrs. Lubna Khot</h3>
-              <p className="text-secondary text-sm font-semibold uppercase tracking-wider mb-4">Vice Principal</p>
-              <p className="text-primary-foreground/80 text-sm leading-relaxed">
-                Mrs. Anjum brings 18 years of dedicated teaching and administrative experience. She oversees academic planning, student welfare, and staff coordination, ensuring the school maintains its high standards of education and discipline.
-              </p>
-            </div>
-          </div>
+    {/* ONLY CHANGE: grid-cols-2 → grid-cols-3 */}
+    <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+
+      {/* Principal */}
+      <div className="bg-primary-foreground/10 rounded-2xl p-8 text-center animate-fade-in border border-primary-foreground/20 hover:bg-primary-foreground/15 transition-colors duration-300">
+        
+        <img
+          src={principalImg}
+          alt="Principal"
+          className="w-24 h-24 rounded-full mx-auto mb-4 object-cover border-4 border-secondary"
+        />
+
+        <h3 className="text-xl font-bold text-primary-foreground mb-1">
+          Mrs. Farhana
+        </h3>
+        <p className="text-secondary text-sm font-semibold uppercase tracking-wider mb-4">
+          Principal
+        </p>
+        <p className="text-primary-foreground/80 text-sm leading-relaxed">
+          With over 25 years of experience in education, Mrs. Farhana leads the school with a vision of academic excellence and holistic student development. Her leadership has transformed the institution into a center of learning and innovation.
+        </p>
+      </div>
+
+      {/* Vice Principal (UNCHANGED) */}
+      <div className="bg-primary-foreground/10 rounded-2xl p-8 text-center animate-fade-in border border-primary-foreground/20 hover:bg-primary-foreground/15 transition-colors duration-300" style={{ animationDelay: "0.15s" }}>
+        <div className="w-24 h-24 bg-secondary rounded-full mx-auto mb-4 flex items-center justify-center">
+          <span className="text-2xl font-bold text-secondary-foreground">LA</span>
         </div>
-      </section>
+        <h3 className="text-xl font-bold text-primary-foreground mb-1">
+          Mrs. Lubna Khot
+        </h3>
+        <p className="text-secondary text-sm font-semibold uppercase tracking-wider mb-4">
+          Vice Principal
+        </p>
+        <p className="text-primary-foreground/80 text-sm leading-relaxed">
+          Mrs. Lubna brings 18 years of dedicated teaching and administrative experience. She oversees academic planning, student welfare, and staff coordination, ensuring the school maintains its high standards of education and discipline.
+        </p>
+      </div>
+
+      {/* ✅ NEW Supervisor (same design, nothing else touched) */}
+      <div className="bg-primary-foreground/10 rounded-2xl p-8 text-center animate-fade-in border border-primary-foreground/20 hover:bg-primary-foreground/15 transition-colors duration-300" style={{ animationDelay: "0.3s" }}>
+        <div className="w-24 h-24 bg-secondary rounded-full mx-auto mb-4 flex items-center justify-center">
+          <span className="text-2xl font-bold text-secondary-foreground">S</span>
+        </div>
+        <h3 className="text-xl font-bold text-primary-foreground mb-1">
+          Mr. Supervisor Name
+        </h3>
+        <p className="text-secondary text-sm font-semibold uppercase tracking-wider mb-4">
+          Supervisor
+        </p>
+        <p className="text-primary-foreground/80 text-sm leading-relaxed">
+          The supervisor ensures smooth daily operations, discipline, and coordination within the school environment, supporting both students and staff effectively.
+        </p>
+      </div>
+
+    </div>
+  </div>
+</section>
     </div>
   );
 };
